@@ -23,11 +23,11 @@ public class ReportsController : Controller
 	[HttpGet]
 	public ActionResult Services(DateTime? dateFrom, DateTime? dateTo)
 	{
-		var report = AtaskaitaRepo.GetServicesOrdered(dateFrom, dateTo);
+		var report = new ServicesReport.Report();
 		//report.DateFrom = dateFrom;
 		//report.DateTo = dateTo?.AddHours(23).AddMinutes(59).AddSeconds(59); //move time of end date to end of day
 
-		//report.Uzsakymai = AtaskaitaRepo.GetServicesOrdered(dateFrom, dateTo);
+		report.Uzsakymai = AtaskaitaRepo.GetServicesOrdered(dateFrom, dateTo);
 
 		return View(report);
 	} 
