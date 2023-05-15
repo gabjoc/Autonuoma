@@ -1,0 +1,150 @@
+﻿@model Org.Ktu.Isk.P175B602.Autonuoma.Models.Uzsakymas.UzsakymasCE
+
+@* this will also be used as page title in main layout *@
+@{
+	ViewData["title"] = "Užsakymo redagavimas";
+}
+
+@* content header *@
+<div class="main-content-header">
+	<span class="title">@ViewData["title"]</span>
+	<span class="actions">
+		<a 
+		href="@Url.Action("Index")"
+		class="btn btn-outline-primary btn-sm"
+		>
+			<i class="fa-solid fa-angles-left"></i> Atgal į sarašą
+		</a>
+	</span>
+</div>
+
+@* content itself *@
+<div class="main-content-ced">
+	@using (Html.BeginForm(FormMethod.Post, new { @class = "entity-ce" }))
+	{
+		@Html.AntiForgeryToken()
+
+		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+		@* add hidden form fields for non-visible properties, otherwise they will get lost in code that handles button
+	presses *@
+		@Html.HiddenFor(m => m.Uzsakymas.Uzsakymas)
+
+		<fieldset>
+			<div class="form-group">
+				@Html.LabelFor(m => m.Uzsakymas.UzsakymoData)
+				@Html.EditorFor(m => m.Uzsakymas.UzsakymoData, "{0:yyyy-MM-dd}", new { @class = "date-picker" })
+				@Html.ValidationMessageFor(m => m.Uzsakymas.UzsakymoData, "")
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(m => m.Uzsakymas.Suma)
+				@Html.TextBoxFor(m => m.Uzsakymas.Suma)
+				@Html.ValidationMessageFor(m => m.Uzsakymas.Suma, "")
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(m => m.Uzsakymas.Adresas)
+				@Html.EditorFor(m => m.Uzsakymas.Adresas)
+				@Html.ValidationMessageFor(m => m.Uzsakymas.Adresas, "")
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(m => m.Uzsakymas.FkPristatymas)
+				@Html.DropDownListFor(m => m.Uzsakymas.FkPristatymas, Model.Lists.Pristatymai,
+			(string)ViewData["none-chosen"])
+				@Html.ValidationMessageFor(m => m.Uzsakymas.FkPristatymas, "")
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(m => m.Uzsakymas.FkKlientas)
+				@Html.DropDownListFor(m => m.Uzsakymas.FkKlientas, Model.Lists.Klientai,
+			(string)ViewData["none-chosen"])
+				@Html.ValidationMessageFor(m => m.Uzsakymas.FkKlientas, "")
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(m => m.Uzsakymas.FkBusena)
+				@Html.DropDownListFor(m => m.Uzsakymas.FkBusena, Model.Lists.Busenos, (string)ViewData["none-chosen"])
+				@Html.ValidationMessageFor(m => m.Uzsakymas.FkBusena, "")
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(m => m.Uzsakymas.FkDarbuotojas)
+				@Html.DropDownListFor(m => m.Uzsakymas.FkDarbuotojas, Model.Lists.Darbuotojai, (string)ViewData["none-chosen"])
+				@Html.ValidationMessageFor(m => m.Uzsakymas.FkDarbuotojas, "")
+			</div>
+		</fieldset>
+		<fieldset>
+		<div class="container-fluid d-flex d-row justify-content-between align-items-center">
+			<span></span>
+			<legend style="width: unset; margin-bottom: 0px;">Užsakymo prekės</legend>
+			<button
+				name="add"
+				value="1"
+				formnovalidate @*ASP.NET Core magic attribute to prevent client side validation when submit button is clicked*@
+				formaction="@Url.Action()#listEnd"
+				class="btn btn-info"
+				style="white-space: nowrap;"
+			><i class="fa-solid fa-plus"></i> Pridėti</button>
+		</div>
+		<table class="table table-striped table-hover w-100">
+			<thead>
+				<tr>
+					<th>Kiekis</th>
+					<th>Prekė</th>
+					<th style="width: 1px;"></th>
+				</tr>
+			</thead>
+			<tbody>
+				@for( var i = 0; i < Model.Uzsakymoprekes.Count; i++ ) {
+				<tr>
+					<td class="form-group">
+						@* add hidden form fields for non-visible properties, otherwise they will get lost in code that handles button presses *@
+						@Html.HiddenFor(m => Model.Uzsakymoprekes[i].Uzsakymopreke.InListId)
+						@Html.HiddenFor(m => Model.Uzsakymoprekes[i].Uzsakymopreke.FkUzsakymas)
+
+						@Html.EditorFor(m => Model.Uzsakymoprekes[i].Uzsakymopreke.Kiekis)
+						@Html.ValidationMessageFor(m => Model.Uzsakymoprekes[i].Uzsakymopreke.Kiekis, "")
+					</td>
+					<td class="form-group">
+						@Html.DropDownListFor(m => Model.Uzsakymoprekes[i].Uzsakymopreke.FkPreke, Model.Lists.Prekes, (string)ViewData["none-chosen"])
+						@Html.ValidationMessageFor(m => Model.Uzsakymoprekes[i].Uzsakymopreke.FkPreke, "")
+					</td>
+					<td>
+						<button
+							name="remove"
+							value="@Model.Uzsakymoprekes[i].Uzsakymopreke.InListId"
+							formnovalidate @*ASP.NET Core magic attribute to prevent client side validation when submit button is clicked*@
+							formaction="@Url.Action()#listEnd"
+							class="btn btn-danger"
+							style="white-space: nowrap;"
+						><i class="fa-solid fa-trash"></i> Šalinti</button>
+					</td>
+				</tr>
+				}
+			</tbody>
+		</table>
+
+		@* this is used as a marker to automatically scroll down to the end of items list when returning from button presses *@
+		<span id="listEnd"></span>
+	</fieldset>
+
+		<div class="container-fluid d-flex d-row justify-content-end">
+			<button name="save" value="1" class="btn btn-success"><i class="fa-solid fa-floppy-disk"></i> Išsaugoti</button>
+		</div>
+}
+</div>
+
+@* content footer *@
+<div class="main-content-footer">
+	<span class="title"></span>
+	<span class="actions">
+		<a 
+				href="@Url.Action("Index")"
+				class="btn btn-outline-primary btn-sm"
+		>
+			<i class="fa-solid fa-angles-left"></i> Atgal į sarašą
+		</a>
+	</span>
+</div>

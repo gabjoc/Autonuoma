@@ -1,0 +1,79 @@
+﻿@model Org.Ktu.Isk.P175B602.Autonuoma.Models.DarbuotojasCE
+
+@* this will also be used as page title in main layout *@
+@{ ViewData["title"] = "Darbuotojo sukūrimas"; }
+
+@* content header *@
+<div class="main-content-header">
+	<span class="title">@ViewData["title"]</span>
+	<span class="actions">
+		<a 
+			href="@Url.Action("Index")" 
+			class="btn btn-outline-primary btn-sm"
+		>
+			<i class="fa-solid fa-angles-left"></i> Atgal į sarašą
+		</a>
+	</span>
+</div>
+
+@* content itself *@
+<div class="main-content-ced">
+@using( Html.BeginForm(FormMethod.Post, new { @class="entity-ce" }) )
+{
+	@Html.AntiForgeryToken()
+
+	@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+	@Html.HiddenFor(m => m.Darbuotojas.Tabelis)
+	
+	<fieldset>
+
+		<div class="form-group">
+			@Html.LabelFor(m => m.Darbuotojas.Vardas)
+			@Html.EditorFor(m => m.Darbuotojas.Vardas)
+			@Html.ValidationMessageFor(m => m.Darbuotojas.Vardas, "")
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(m => m.Darbuotojas.Pavarde)
+			@Html.EditorFor(m => m.Darbuotojas.Pavarde)
+			@Html.ValidationMessageFor(m => m.Darbuotojas.Pavarde, "")
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(m => m.Darbuotojas.Telefonas)
+			@Html.EditorFor(m => m.Darbuotojas.Telefonas)
+			@Html.ValidationMessageFor(m => m.Darbuotojas.Telefonas, "")
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(m => m.Darbuotojas.Pastas)
+			@Html.EditorFor(m => m.Darbuotojas.Pastas)
+			@Html.ValidationMessageFor(m => m.Darbuotojas.Pastas, "")
+		</div>
+		
+		<div class="form-group">
+			@Html.LabelFor(m => m.Darbuotojas.FkParduotuve)
+			@Html.DropDownListFor(m => m.Darbuotojas.FkParduotuve, Model.Lists.Parduotuves, (string)ViewData["none-chosen"])
+			@Html.ValidationMessageFor(m => m.Darbuotojas.FkParduotuve, "")
+		</div>
+	</fieldset>
+
+	<div class="container-fluid d-flex d-row justify-content-end">
+		<button name="save" value="1" class="btn btn-success"><i class="fa-solid fa-floppy-disk"></i> Išsaugoti</button>
+	</div>
+}
+</div>
+
+@* content footer *@
+<div class="main-content-footer">
+	<span class="title"></span>
+	<span class="actions">
+		<a 
+			href="@Url.Action("Index")" 
+			class="btn btn-outline-primary btn-sm"
+		>
+			<i class="fa-solid fa-angles-left"></i> Atgal į sarašą
+		</a>
+	</span>
+</div>

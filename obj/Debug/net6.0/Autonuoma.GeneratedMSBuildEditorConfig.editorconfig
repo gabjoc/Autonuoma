@@ -1,0 +1,276 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Autonuoma
+build_property.RootNamespace = Autonuoma
+build_property.ProjectDir = C:\Users\Gabija\Desktop\Duomenų bazės\Autonuoma\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Gabija\Desktop\Duomenų bazės\Autonuoma
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Automobilis/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b21vYmlsaXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Automobilis/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b21vYmlsaXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Automobilis/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b21vYmlsaXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Automobilis/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b21vYmlsaXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Darbuotojas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFyYnVvdG9qYXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Darbuotojas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFyYnVvdG9qYXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Darbuotojas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFyYnVvdG9qYXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Darbuotojas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFyYnVvdG9qYXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Gamintojas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtaW50b2phc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Gamintojas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtaW50b2phc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Gamintojas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtaW50b2phc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Gamintojas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtaW50b2phc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Kategorija/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2F0ZWdvcmlqYVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Kategorija/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2F0ZWdvcmlqYVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Kategorija/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2F0ZWdvcmlqYVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Kategorija/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2F0ZWdvcmlqYVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Klientas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2xpZW50YXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Klientas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2xpZW50YXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Klientas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2xpZW50YXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Klientas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2xpZW50YXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Marke/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFya2VcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Marke/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFya2VcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Marke/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFya2VcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Marke/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFya2VcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Miestas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWllc3Rhc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Miestas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWllc3Rhc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Miestas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWllc3Rhc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Miestas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWllc3Rhc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Modelis/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kZWxpc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Modelis/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kZWxpc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Modelis/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kZWxpc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Modelis/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kZWxpc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Parduotuve/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZHVvdHV2ZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Parduotuve/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZHVvdHV2ZVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Parduotuve/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZHVvdHV2ZVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Parduotuve/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZHVvdHV2ZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Paslauga/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFzbGF1Z2FcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Paslauga/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFzbGF1Z2FcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Paslauga/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFzbGF1Z2FcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Paslauga/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFzbGF1Z2FcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Preke/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJla2VcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Preke/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJla2VcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Preke/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJla2VcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Preke/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJla2VcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Reports/Contracts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0c1xDb250cmFjdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Reports/LateContracts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0c1xMYXRlQ29udHJhY3RzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Reports/Services.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0c1xTZXJ2aWNlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/SutartisF2/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3V0YXJ0aXNGMlxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/SutartisF2/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3V0YXJ0aXNGMlxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/SutartisF2/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3V0YXJ0aXNGMlxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/SutartisF2/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3V0YXJ0aXNGMlxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/SutartisF3/AddedServiceAdd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3V0YXJ0aXNGM1xBZGRlZFNlcnZpY2VBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/SutartisF3/AddedServiceEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3V0YXJ0aXNGM1xBZGRlZFNlcnZpY2VFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/SutartisF3/ContractCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3V0YXJ0aXNGM1xDb250cmFjdENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/SutartisF3/ContractDelete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3V0YXJ0aXNGM1xDb250cmFjdERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/SutartisF3/ContractEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3V0YXJ0aXNGM1xDb250cmFjdEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/SutartisF3/ContractList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3V0YXJ0aXNGM1xDb250cmFjdExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Uzsakymas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXpzYWt5bWFzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Uzsakymas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXpzYWt5bWFzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Uzsakymas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXpzYWt5bWFzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/Uzsakymas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXpzYWt5bWFzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabija/Desktop/Duomenų bazės/Autonuoma/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
