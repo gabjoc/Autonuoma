@@ -1,4 +1,4 @@
-﻿namespace Org.Ktu.Isk.P175B602.Autonuoma.Repositories;
+﻿/*namespace Org.Ktu.Isk.P175B602.Autonuoma.Repositories;
 
 using MySql.Data.MySqlClient;
 
@@ -94,83 +94,65 @@ public class AtaskaitaRepo
 		var result = 
 			Sql.MapOne<ServicesReport.Report>(drc, (dre, t) => {
 				t.VisoUzsakytaPrekiu = dre.From<int?>("kiekis") ;
-				t.VisoBendraSuma = dre.From<decimal?>("suma") ;
-				t.VisoBendrasUzakKiekis = dre.From<int?>("bendras_kiekis");
+				t.BendraSuma = dre.From<decimal?>("suma") ;
+				t.BendrasUzakKiekis = dre.From<int?>("bendras_kiekis");
 			});
 
 		return result;
 	}
 
-	public static List<ServicesReport.Uzsakymas> GetContracts(DateTime? dateFrom, DateTime? dateTo)
+	public static List<ContractsReport.Sutartis> GetContracts(DateTime? dateFrom, DateTime? dateTo)
 	{
 		var query =
 			$@"SELECT
-				uz.uzsakymo_nr,
-				uz.uzsakymo_data,
-				CASE
-					WHEN uz.busena = 3 THEN 0
-					ELSE SUM(kiek.kiekis)
-					END AS prekes_kiekis,
-				CASE
-					WHEN uz.busena = 3 THEN 0
-					ELSE SUM(kiek.kiekis * prekes.kaina)
-					END AS bendraUzsakymo_suma,
-				CONCAT(k.vardas, ' ', k.pavarde) AS klientas,
-				CONCAT(d.vardas, ' ', d.pavarde) AS darbuotojas,
-				k.pirkejo_nr,
-				COUNT(DISTINCT uz.uzsakymo_nr) AS bendras_kiekis,
-				SUM(
-					CASE
-					WHEN uz.busena <> 3 THEN kiek.kiekis
-					ELSE 0
-					END
-				) AS kiekis,
-				SUM(
-					CASE
-					WHEN uz.busena <> 3 THEN kiek.kiekis * prekes.kaina
-					ELSE 0
-					END
-				) AS bendra_suma
+				sut.nr,
+				sut.sutarties_data,
+				kln.vardas,
+				kln.pavarde,
+				kln.asmens_kodas,
+				sut.kaina,
+				IFNULL(SUM(up.kaina*up.kiekis), 0) paslaugu_kaina,
+				bs1.bendra_suma,
+				bs2.bendra_suma bendra_suma_paslaugu
 			FROM
-				`uzsakymai` uz
-				LEFT JOIN `uzsakymo_prekes` kiek ON kiek.fk_UZSAKYMASuzsakymo_nr = uz.uzsakymo_nr
-				LEFT JOIN `prekes` prekes ON prekes.prekes_kodas = kiek.fk_PREKEprekes_kodas
-				INNER JOIN `klientai` k ON k.pirkejo_nr = uz.fk_KLIENTASpirkejo_nr
-				INNER JOIN `darbuotojai` d on d.tabelio_nr = uz.fk_DARBUOTOJAStabelio_nr
+				`{Config.TblPrefix}sutartys` sut
+				INNER JOIN `{Config.TblPrefix}klientai` kln ON kln.asmens_kodas = sut.fk_klientas
+				LEFT JOIN `{Config.TblPrefix}uzsakytos_paslaugos` up ON up.fk_sutartis = sut.nr
 				LEFT JOIN
 					(
 						SELECT
-							k1.pirkejo_nr,
-							COUNT(DISTINCT uz1.uzsakymo_nr) AS bendras_kiekis,
-							SUM(
-								CASE
-									WHEN uz1.busena <> 3 THEN kiek1.kiekis
-									ELSE 0
-								END
-							) AS kiekis,
-							SUM(
-								CASE
-									WHEN uz1.busena <> 3 THEN kiek1.kiekis * prekes.kaina
-									ELSE 0
-								END
-							) AS bendra_suma
-						FROM
-							`uzsakymai` uz1
-							INNER JOIN `klientai` k1 ON k1.pirkejo_nr = uz1.fk_KLIENTASpirkejo_nr
-							INNER JOIN `uzsakymo_prekes` kiek1 ON kiek1.fk_UZSAKYMASuzsakymo_nr = uz1.uzsakymo_nr
-							INNER JOIN `prekes` prekes ON prekes.prekes_kodas = kiek1.fk_PREKEprekes_kodas
+							kln1.asmens_kodas,
+							sum(sut1.kaina) as bendra_suma
+						FROM `{Config.TblPrefix}sutartys` sut1, `{Config.TblPrefix}klientai` kln1
 						WHERE
-							uz1.uzsakymo_data >= IFNULL(?nuo, uz1.uzsakymo_data)
-							AND uz1.uzsakymo_data <= IFNULL(?iki, uz1.uzsakymo_data)
-						GROUP BY k1.pirkejo_nr
-					) AS klie ON klie.pirkejo_nr = k.pirkejo_nr
+							kln1.asmens_kodas=sut1.fk_klientas
+							AND sut1.sutarties_data >= IFNULL(?nuo, sut1.sutarties_data)
+							AND sut1.sutarties_data <= IFNULL(?iki, sut1.sutarties_data)
+							GROUP BY kln1.asmens_kodas
+					) AS bs1
+					ON bs1.asmens_kodas = kln.asmens_kodas
+				LEFT JOIN
+					(
+						SELECT
+							kln2.asmens_kodas,
+							IFNULL(SUM(up2.kiekis*up2.kaina), 0) as bendra_suma
+						FROM
+							`{Config.TblPrefix}sutartys` sut2
+							INNER JOIN `{Config.TblPrefix}klientai` kln2 ON kln2.asmens_kodas = sut2.fk_klientas
+							LEFT JOIN `{Config.TblPrefix}uzsakytos_paslaugos` up2 ON up2.fk_sutartis = sut2.nr
+						WHERE
+							sut2.sutarties_data >= IFNULL(?nuo, sut2.sutarties_data)
+							AND sut2.sutarties_data <= IFNULL(?iki, sut2.sutarties_data)
+						GROUP BY kln2.asmens_kodas
+					) AS bs2
+					ON bs2.asmens_kodas = kln.asmens_kodas
 			WHERE
-				uz.uzsakymo_data >= IFNULL(?nuo, uz.uzsakymo_data)
-				AND uz.uzsakymo_data <= IFNULL(?iki, uz.uzsakymo_data)
-			GROUP BY
-				uz.uzsakymo_nr, k.pirkejo_nr
-			ORDER BY
-				k.pavarde ASC";
+				sut.sutarties_data >= IFNULL(?nuo, sut.sutarties_data)
+				AND sut.sutarties_data <= IFNULL(?iki, sut.sutarties_data)
+			GROUP BY 
+				sut.nr, kln.asmens_kodas
+			ORDER BY 
+				kln.pavarde ASC";
 
 		var drc =
 			Sql.Query(query, args => {
@@ -179,16 +161,16 @@ public class AtaskaitaRepo
 			});
 
 		var result = 
-			Sql.MapAll<ServicesReport.Uzsakymas>(drc, (dre, t) => {
-				t.UzsakymoNr = dre.From<int>("uzsakymo_nr");
-				t.UzsakymoData = dre.From<DateTime>("uzsakymo_data");
-				t.Klientas = dre.From<string>("klientas");
-				t.darbuotojas = dre.From<string>("darbuotojas");
-				t.Suma = dre.From<decimal>("bendraUzsakymo_suma");
-				t.Kiekis = dre.From<int>("prekes_kiekis");
-				t.BendrasPrekiuKiekis = dre.From<int>("kiekis");
+			Sql.MapAll<ContractsReport.Sutartis>(drc, (dre, t) => {
+				t.Nr = dre.From<int>("nr");
+				t.SutartiesData = dre.From<DateTime>("sutarties_data");
+				t.AsmensKodas = dre.From<string>("asmens_kodas");
+				t.Vardas = dre.From<string>("vardas");
+				t.Pavarde = dre.From<string>("pavarde");
+				t.Kaina = dre.From<decimal>("kaina");
+				t.PaslauguKaina = dre.From<decimal>("paslaugu_kaina");
 				t.BendraSuma = dre.From<decimal>("bendra_suma");
-				t.BendrasUzsakymuKiekis = dre.From<int>("bendras_kiekis");
+				t.BendraSumaPaslaug = dre.From<decimal>("bendra_suma_paslaugu");
 			});
 
 		return result;
@@ -235,4 +217,4 @@ public class AtaskaitaRepo
 
 		return result;
 	}
-}
+} */

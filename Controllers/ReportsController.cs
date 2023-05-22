@@ -23,9 +23,9 @@ public class ReportsController : Controller
 	[HttpGet]
 	public ActionResult Services(DateTime? dateFrom, DateTime? dateTo)
 	{
-		var report = new ServicesReport.Report();
-		//report.DateFrom = dateFrom;
-		//report.DateTo = dateTo?.AddHours(23).AddMinutes(59).AddSeconds(59); //move time of end date to end of day
+		var report =  AtaskaitaRepo.GetTotalServicesOrdered(dateFrom, dateTo);
+		report.DateFrom = dateFrom;
+		report.DateTo = dateTo; //move time of end date to end of day
 
 		report.Uzsakymai = AtaskaitaRepo.GetServicesOrdered(dateFrom, dateTo);
 
@@ -41,16 +41,17 @@ public class ReportsController : Controller
 	[HttpGet]
 	public ActionResult Contracts(DateTime? dateFrom, DateTime? dateTo)
 	{
-		var report = new ContractsReport.Report();
+		var report = new ServicesReport.Report();
 		report.DateFrom = dateFrom;
-		report.DateTo = dateTo?.AddHours(23).AddMinutes(59).AddSeconds(59); //move time of end date to end of day
+		report.DateTo = dateTo; //move time of end date to end of day
 
-		report.Sutartys = AtaskaitaRepo.GetContracts(report.DateFrom, report.DateTo);
+		report.Uzsakymai = AtaskaitaRepo.GetServicesOrdered(report.DateFrom, report.DateTo);
 
-		foreach (var item in report.Sutartys)
+		foreach (var item in report.Uzsakymai)
 		{
-			report.VisoSumaSutartciu += item.Kaina;
-			report.VisoSumaPaslaugu += item.PaslauguKaina;
+			report.VisoBendraSuma += item.Suma;
+			report.VisoBendrasUzakKiekis += item.UzsakymoNr;
+			report.VisoUzsakytaPrekiu += item.Kiekis;
 		}
 
 		return View(report);

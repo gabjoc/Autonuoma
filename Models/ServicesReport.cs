@@ -16,9 +16,10 @@ public class Uzsakymas
 	[DisplayName("Užsakymo nr.")]
 	public int UzsakymoNr { get; set; }
 
-	[DisplayName("Data")]
-	[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
-	public DateTime UzsakymoData { get; set; }
+	[DisplayName("Užsakymo data")]
+	[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = false)]
+	[Required]
+    public DateTime UzsakymoData { get; set; }
 
 	[DisplayName("Prekių kiekis")]
 	public int Kiekis { get; set; }
@@ -28,6 +29,11 @@ public class Uzsakymas
 
 	[DisplayName("Aptarnavęs darbuotojas")]
 	public string darbuotojas { get; set; }
+	public decimal BendraSuma { get; set; }
+
+	public int BendrasPrekiuKiekis { get; set; }
+	public int BendrasUzsakymuKiekis { get; set; }
+	public string pirkejoNr { get; set; }
 }
 
 /// <summary>
@@ -45,7 +51,8 @@ public class Report
 
 	public List<Uzsakymas> Uzsakymai { get; set; }
 
-	public int VisoUzsakyta { get; set; }
+	public int? VisoUzsakytaPrekiu { get; set; }
 
-	public decimal BendraSuma { get; set; }
+	public decimal? VisoBendraSuma { get; set; }
+	public int? VisoBendrasUzakKiekis { get; set; }
 }

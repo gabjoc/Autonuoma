@@ -14,7 +14,7 @@ public class UzsakymasL
 	public int Uzsakymas { get; set; }
 
 	[DisplayName("Užsakymo data")]
-	[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+	[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = false)]
 	[Required]
     public DateTime UzsakymoData { get; set; }
 
@@ -46,7 +46,7 @@ public class UzsakymasCE
 		public int Uzsakymas { get; set; }
 
         [DisplayName("Užsakymo data")]
-[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+		[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = false)]
 	    [Required]
         public DateTime UzsakymoData { get; set; } = DateTime.Now;
 
