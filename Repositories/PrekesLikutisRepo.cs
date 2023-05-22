@@ -97,7 +97,7 @@ public class PrekesLikutisRepo
 	public static int SumLikutisForPreke(int prekeskodas)
 	{
 		string query = 
-		$@"SELECT SUM(kiekis)
+		$@"SELECT IFNULL(SUM(kiekis), 0)
 		FROM `likuciai`
 		WHERE fk_PREKEprekes_kodas = ?id";
 		var result = Sql.Query(query, args => {
